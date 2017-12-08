@@ -1,0 +1,25 @@
+{
+  "entry": "src/index.js",
+  "proxy": {
+    "/T_ZHWY_SSM": {
+      "target": "http://localhost:8080/T_ZHWY_SSM",
+      "changeOrigin": true,
+      "pathRewrite": { "^/T_ZHWY_SSM" : "" }
+      }
+  },
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr",
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": "css" }]
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime",
+        ["import", { "libraryName": "antd", "style": "css" }]
+      ]
+    }
+  }
+}
